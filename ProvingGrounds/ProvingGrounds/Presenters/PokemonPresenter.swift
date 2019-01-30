@@ -26,7 +26,7 @@ final class PokemonPresenter: ViewToPresenterProtocol{
 }
 
 extension PokemonPresenter: InteractorToPresenterProtocol{
-    func fetchedSuccess(pokemon: Array<Pokemon>) {
+    func fetchedSuccess(pokemon: Array<MetaPokemon>) {
         view?.showPokemon(pokemon: pokemon)
     }
     

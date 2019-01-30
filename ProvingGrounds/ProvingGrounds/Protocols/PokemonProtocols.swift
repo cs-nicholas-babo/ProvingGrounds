@@ -15,17 +15,17 @@ protocol ViewToPresenterProtocol: class{
     var interactor: PresenterToInteractorProtocol? {get set}
     var router: PresenterToRouterProtocol? {get set}
     func startFetchingPokemon()
-    func showDetailController(navigationController:UINavigationController)
+    func showDetailController(navigationController: UINavigationController)
 }
 
 protocol PresenterToViewProtocol: class{
-    func showPokemon(pokemon:Array<Pokemon>)
+    func showPokemon(pokemon: Array<MetaPokemon>)
     func showError()
 }
 
 protocol PresenterToRouterProtocol: class {
 //    static func createModule()-> NoticeViewController
-    func pushToDetailScreen(navigationConroller:UINavigationController)
+    func pushToDetailScreen(navigationConroller: UINavigationController)
 }
 
 protocol PresenterToInteractorProtocol: class {
@@ -34,6 +34,6 @@ protocol PresenterToInteractorProtocol: class {
 }
 
 protocol InteractorToPresenterProtocol: class {
-    func fetchedSuccess(pokemon:Array<Pokemon>)
+    func fetchedSuccess(pokemon: Array<MetaPokemon>)
     func fetchFailed()
 }

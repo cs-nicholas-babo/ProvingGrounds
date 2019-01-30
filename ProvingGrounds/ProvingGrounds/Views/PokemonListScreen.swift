@@ -10,8 +10,8 @@ import UIKit
 
 final class PokemonListScreen: UIView{
     
-    lazy var collectionView: UICollectionView = {
-        let view = UICollectionView(frame: .zero)
+    lazy var collectionView: PokemonListCollectionView = {
+        let view = PokemonListCollectionView()
         return view
     }()
     
@@ -28,8 +28,8 @@ final class PokemonListScreen: UIView{
 
 extension PokemonListScreen{
     
-    func showPokemon(pokemon: Array<Pokemon>){
-        print(pokemon.count)
+    func showPokemon(pokemon: Array<MetaPokemon>){
+        self.collectionView.updateDatasource(with: pokemon)
     }
     
 }
@@ -40,13 +40,18 @@ extension PokemonListScreen: ViewCode{
     }
     
     func setupConstraints() {
-        collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        collectionView.snp.makeConstraints { make in
+            make.topMargin.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
-    func setupAdditionalConfiguration() { }
+    func setupAdditionalConfiguration() {
+        collectionView.register(PokemonListCollectionViewCell.self, forCellWithReuseIdentifier: "ListCell")
+        collectionView.backgroundColor = .white
+    }
     
     
 }

@@ -16,16 +16,20 @@ final class PokemonListController: UIViewController{
     override func viewDidLoad() {
         presenter?.startFetchingPokemon()
     }
+    
+    override func loadView() {
+        self.view = self.screen
+    }
 }
 
 extension PokemonListController: PresenterToViewProtocol{
     
-    func showPokemon(pokemon: Array<Pokemon>) {
-        
+    func showPokemon(pokemon: Array<MetaPokemon>) {
+        screen.showPokemon(pokemon: pokemon)
     }
     
     func showError() {
-        
+        print("View controller showing error")
     }
     
 }

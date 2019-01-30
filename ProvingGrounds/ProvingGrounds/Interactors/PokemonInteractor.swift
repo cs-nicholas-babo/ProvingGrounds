@@ -18,7 +18,14 @@ final class PokemonInteractor: PresenterToInteractorProtocol{
     }
     
     func fetchPokemon() {
-        self.networkWorker.fetchPokemon()
+        networkWorker.fetchPokemon { result in
+            switch result{
+            case .success(let pokemon):
+                self.presenter?.fetchedSuccess(pokemon: pokemon)
+            case .error(let _):
+                self.presenter?.fetchFailed()
+            }
+        }
     }
     
     
