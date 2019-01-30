@@ -27,6 +27,8 @@
 		A1B41C8A2201DF8A00518BA8 /* PokemonListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B41C892201DF8A00518BA8 /* PokemonListDelegate.swift */; };
 		A1B41C8D2201E01300518BA8 /* PokemonListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B41C8C2201E01300518BA8 /* PokemonListCollectionView.swift */; };
 		A1B41C902201E2AD00518BA8 /* PokemonListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B41C8F2201E2AD00518BA8 /* PokemonListCollectionViewCell.swift */; };
+		A1B41C95220226CA00518BA8 /* AlamoFireNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B41C94220226CA00518BA8 /* AlamoFireNetworkWorker.swift */; };
+		A1B41C97220228C300518BA8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B41C96220228C300518BA8 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		A1B41C892201DF8A00518BA8 /* PokemonListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListDelegate.swift; sourceTree = "<group>"; };
 		A1B41C8C2201E01300518BA8 /* PokemonListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCollectionView.swift; sourceTree = "<group>"; };
 		A1B41C8F2201E2AD00518BA8 /* PokemonListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1B41C94220226CA00518BA8 /* AlamoFireNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireNetworkWorker.swift; sourceTree = "<group>"; };
+		A1B41C96220228C300518BA8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E3ED4F85CA469E7761CC6C /* Pods_ProvingGrounds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProvingGrounds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D634815F7047C5C20C930B8D /* Pods-ProvingGrounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvingGrounds.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProvingGrounds/Pods-ProvingGrounds.release.xcconfig"; sourceTree = "<group>"; };
 		FCCDB94CFE25552D11AB7980 /* Pods-ProvingGrounds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvingGrounds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProvingGrounds/Pods-ProvingGrounds.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B41C97220228C300518BA8 /* Alamofire.framework in Frameworks */,
 				34C320A914728A0F30185DE6 /* Pods_ProvingGrounds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +76,7 @@
 		0633D26D783F3A97A525F9AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1B41C96220228C300518BA8 /* Alamofire.framework */,
 				A8E3ED4F85CA469E7761CC6C /* Pods_ProvingGrounds.framework */,
 			);
 			name = Frameworks;
@@ -179,6 +185,7 @@
 			children = (
 				A1B41C6A2200E2BC00518BA8 /* NetworkWorker.swift */,
 				A1B41C6E2200E34300518BA8 /* NativeNetworkWorker.swift */,
+				A1B41C94220226CA00518BA8 /* AlamoFireNetworkWorker.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -349,12 +356,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProvingGrounds/Pods-ProvingGrounds-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +389,7 @@
 				A1B41C7A2200E92A00518BA8 /* PokemonListScreen.swift in Sources */,
 				A1B41C842201D31300518BA8 /* PokemonListFactory.swift in Sources */,
 				A1B41C6B2200E2BC00518BA8 /* NetworkWorker.swift in Sources */,
+				A1B41C95220226CA00518BA8 /* AlamoFireNetworkWorker.swift in Sources */,
 				A1B41C812201CEE500518BA8 /* PokemonResponse.swift in Sources */,
 				A1B41C8A2201DF8A00518BA8 /* PokemonListDelegate.swift in Sources */,
 				A1B41C5F2200DB9C00518BA8 /* Pokemon.swift in Sources */,

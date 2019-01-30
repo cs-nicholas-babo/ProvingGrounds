@@ -8,13 +8,35 @@
 
 import Foundation
 
+enum NetworkWorkerType{
+    case Native
+    case Alamofire
+}
+
+enum DatabaseWorkerType{
+    case CoreData
+    case Realm
+}
+
 final class PokemonListFactory{
     
-    static func make() -> PokemonListController{
+    var networkProvider: NetworkWorker
+//    var databaseProvider
+    
+    init(network: NetworkWorkerType){
+        switch network{
+        case .Native:
+            self.networkProvider = NativeNetworkWorker()
+        case .Alamofire:
+            self.networkProvider = AlamoFireNetworkWorker()
+        }
+    }
+    
+    func make() -> PokemonListController{
         let vc = PokemonListController()
         let presenter = PokemonPresenter()
-        let nativeWorker = NativeNetworkWorker()
-        let interactor = PokemonInteractor(worker: nativeWorker)
+        let networkWorker = self.networkProvider
+        let interactor = PokemonInteractor(worker: networkWorker)
         
         vc.presenter = presenter
         interactor.presenter = presenter

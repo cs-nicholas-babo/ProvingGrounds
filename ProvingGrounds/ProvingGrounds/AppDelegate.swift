@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let pokemonListController = PokemonListFactory.make()
+        let pokemonListController = PokemonListFactory(network: .Alamofire).make()
         
         window.rootViewController = pokemonListController
         window.makeKeyAndVisible()
