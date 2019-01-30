@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34C320A914728A0F30185DE6 /* Pods_ProvingGrounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E3ED4F85CA469E7761CC6C /* Pods_ProvingGrounds.framework */; };
+		A139F288220238C400B891BE /* MoyaNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139F287220238C400B891BE /* MoyaNetworkWorker.swift */; };
 		A1B41C4C2200D99300518BA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B41C4B2200D99300518BA8 /* AppDelegate.swift */; };
 		A1B41C532200D99500518BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B41C522200D99500518BA8 /* Assets.xcassets */; };
 		A1B41C562200D99500518BA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B41C542200D99500518BA8 /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A139F287220238C400B891BE /* MoyaNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaNetworkWorker.swift; sourceTree = "<group>"; };
 		A1B41C482200D99300518BA8 /* ProvingGrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProvingGrounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B41C4B2200D99300518BA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1B41C522200D99500518BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				A1B41C6A2200E2BC00518BA8 /* NetworkWorker.swift */,
 				A1B41C6E2200E34300518BA8 /* NativeNetworkWorker.swift */,
 				A1B41C94220226CA00518BA8 /* AlamoFireNetworkWorker.swift */,
+				A139F287220238C400B891BE /* MoyaNetworkWorker.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -357,6 +360,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProvingGrounds/Pods-ProvingGrounds-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -364,6 +369,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B41C762200E79D00518BA8 /* PokemonInteractor.swift in Sources */,
+				A139F288220238C400B891BE /* MoyaNetworkWorker.swift in Sources */,
 				A1B41C7C2200E93200518BA8 /* ViewCode.swift in Sources */,
 				A1B41C6F2200E34300518BA8 /* NativeNetworkWorker.swift in Sources */,
 				A1B41C4C2200D99300518BA8 /* AppDelegate.swift in Sources */,

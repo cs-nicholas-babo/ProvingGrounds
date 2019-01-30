@@ -11,6 +11,7 @@ import Foundation
 enum NetworkWorkerType{
     case Native
     case Alamofire
+    case Moya
 }
 
 enum DatabaseWorkerType{
@@ -29,6 +30,8 @@ final class PokemonListFactory{
             self.networkProvider = NativeNetworkWorker()
         case .Alamofire:
             self.networkProvider = AlamoFireNetworkWorker()
+        case .Moya:
+            self.networkProvider = MoyaNetworkWorker()
         }
     }
     
