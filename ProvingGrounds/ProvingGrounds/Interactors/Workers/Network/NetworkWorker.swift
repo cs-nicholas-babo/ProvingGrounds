@@ -8,6 +8,21 @@
 
 import Foundation
 
-protocol NetworkWorker: class{
-    func fetchPokemon()
+enum Result<T> {
+    case success(T)
+    case error(Error)
 }
+
+protocol NetworkWorker: class{
+    var baseURL:String {get}
+    func fetchPokemon(callback: @escaping (Result<[MetaPokemon]>) -> Void)
+}
+
+extension NetworkWorker{
+    var baseURL: String{
+        get{
+            return "https://pokeapi.co/api/v2"
+        }
+    }
+}
+
